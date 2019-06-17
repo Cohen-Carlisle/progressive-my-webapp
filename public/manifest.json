@@ -4,9 +4,14 @@
   "TODO": "add 192px and 512px icons",
   "icons": [
     {
-      "src": "/cat.png",
+      "src": "icons/cat-192.png",
       "type": "image/png",
-      "sizes": "120x120"
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/cat-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",
