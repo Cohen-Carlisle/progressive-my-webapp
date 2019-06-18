@@ -1,22 +1,21 @@
 {
   "short_name": "PmyW",
   "name": "ProgressiveMyWebapp",
-  "TODO": "add 192px and 512px icons",
   "icons": [
     {
-      "src": "icons/cat-192.png",
+      "src": "icons/icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "icons/cat-512.png",
+      "src": "icons/icon-logo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": "/",
-  "background_color": "#fdc23c",
+  "background_color": "#011243",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#f89931"
+  "theme_color": "#f8463a"
 }
