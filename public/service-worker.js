@@ -1,5 +1,5 @@
 var CACHE_NAME = "cache-v2";
-var urlsToCache = ["/offline.html"]
+var urlsToCache = ["/offline.html", "/images/card.png", "/images/no-wifi.png"]
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache => {
@@ -11,8 +11,14 @@ self.addEventListener("install", (event) => {
 // hit the network and fallback to cached info
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    fetch(event.request).catch(() => {
-      // if network call fails, load the cached info
+    caches.match(event.request)
+    .then(response => {
+      if (response) {
+        return response;
+      }
+      return fetch(event.request)
+      // TODO - Add fetched files to the cache
+    }).catch(error => {
       return caches.open(CACHE_NAME).then((cache) => {
         return cache.match("offline.html");
       });
